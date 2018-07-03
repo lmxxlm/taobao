@@ -12,6 +12,16 @@
 				</div>
 			</div>
 		</div>
+		<div class="flex_between qNew">
+			<p class="left">
+				<i class="span">{{playDatas.qNew.tag}}</i>
+				{{playDatas.qNew.info1}}
+			</p>
+			<p class="right">
+				{{playDatas.qNew.info2}}
+				<i class="icon iconfont icon-you1"></i>
+			</p>
+		</div>
 	</div>
 </template>
 
@@ -44,6 +54,29 @@
     .tbPlay{
     	margin-top:10rem/@base;
     	position:relative;
+    	.qNew{
+    		/*抢鲜*/
+    		height:40rem/@base;
+    		font-size:14rem/@base;
+    		border-top:1rem/@base solid #e3e3e3;
+    		background:#fff;
+    		padding:0 10rem/@base;
+    		
+    		.left{
+    			.span{
+    				margin-right:5rem/@base;
+    				border:1px solid #FB1E5F;
+    				color:#FB1E5F;
+    				padding:2px 4rem/@base;  /*padding  上下边距的时候通常写死px就好了  然后一定注意初始化line-height*/
+    				border-radius:3rem/@base;
+    				display:inline-block;
+    				line-height:14rem/@base;  /*设置line-height   不然字体自带的line-height会影响样式*/
+    			}
+    		}
+    		.right{
+    			i{display:inline-block;}
+    		}
+    	}
     	.tag{
     		position:absolute;
     		left:0;

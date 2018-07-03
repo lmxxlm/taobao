@@ -24,6 +24,8 @@
 	   <actives></actives>
        <!--淘宝直播-->
        <tb-play :playDatas="tbPlayDatas" v-if="tbPlayDatas"></tb-play>
+       <!--猜你喜欢-->
+       <guess-likes></guess-likes>
 	</div>
 </template>
 
@@ -32,6 +34,7 @@
 	import Tabs from 'components/home/tab'
 	import Actives from 'components/home/active'
 	import TbPlay from 'components/home/tbPlay'
+	import GuessLikes from 'components/home/guessLikes'
 	
 	import {setBgImg} from 'common/js/setBgImg'
 
@@ -67,6 +70,11 @@
 			//    淘宝直播data
 			    tbPlayDatas:{
 			    	tag:'淘宝直播',
+			    	qNew:{
+			    		tag:'抢鲜',
+			    		info1:'夏装上市，跟着主播买买买',
+			    		info2:'不装晒大好河'
+			    	},
 			    	data:[
 			    	   {
 			    	   	bgImg:require('common/image/tbPlay/6.jpg'),
@@ -127,7 +135,8 @@
 			Loop,
 			Tabs,
 			Actives,
-			TbPlay,
+			TbPlay,//淘宝直播
+			GuessLikes,//猜你喜欢
 		}
 	}
 </script>
