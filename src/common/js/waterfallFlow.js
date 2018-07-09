@@ -1,6 +1,4 @@
 //import { getClient , getByClass} from 'common/js/util'
-
-
 export function waterFlows(parent, chirld){
     var wparent = document.getElementById(parent);//获取父级div, 最外级容器
     var allArr = getAllChirld(wparent,chirld);//获取到所有的class为box的容器div
@@ -70,3 +68,6 @@ function getminIndex(onlyOneColsArr, min){
             }
         }
 }
+
+
+
