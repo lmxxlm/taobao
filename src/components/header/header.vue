@@ -40,6 +40,7 @@
     	span{
     		font-size:12rem/@base;
     		margin-top:3rem/@base;
+    		white-space: nowrap;
     	}
        .com_icon{font-size:20rem/@base;line-height:20rem/@base;padding:0;}/*给字体图标价格line-height;就会撑满*/
        .center{

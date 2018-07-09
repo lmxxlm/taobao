@@ -4,7 +4,7 @@
 			<i class="icon iconfont icon-shoucang"></i><span>{{likeDatas.title}}</span>
 		</div>
 		
-		<div class="wrapLikes" id="wrapLikes" >
+		<div class="wrapLikes" ref="wrapLikes">
 			<div class="block" v-for="item in likeDatas.datas">
 				<img :src="item.imgUrl" alt="" />
 				<p>{{item.info}}</p>
@@ -23,11 +23,11 @@
 </template>
 
 <script>
-	//import {waterFull} from 'common/js/waterfallFlow'
+	import { waterFull } from 'common/js/waterfallFlow'
 	export default{
-		/*created:{
-			waterFull('wrapLikes','block');
-		},*/
+		mounted(){
+			waterFull(this.$refs.wrapLikes,'block');
+		},
 		data(){
 			return {
 				likeDatas:{
@@ -83,8 +83,10 @@
 					   },
 					]
 				}
+			
 			}
-		}
+		},
+		
 	}
 </script>
 
@@ -107,9 +109,10 @@
     		width:100%;
     		position:relative;
     		.block{
-    			width:50%;
+    			width:49%;
     			display:inline-block;
     			background:#fff;
+    			position:absolute;
     			img{
     				width:100%;
     			}
