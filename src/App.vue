@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <m-header ></m-header>
     <keep-alive>
         <router-view/>
     </keep-alive>
@@ -9,12 +8,10 @@
 </template>
 
 <script>
-import MHeader from 'components/header/header'
 import MFooter from 'components/footer/footer'
 export default {
   name: 'App',
   components:{
-     MHeader,
      MFooter
   }
 }

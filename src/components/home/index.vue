@@ -1,5 +1,7 @@
 <template>
 	<div class="home">
+      <m-header ></m-header>
+		
 	   <loop :setOptions="swiperOptionHP" :hpLoops="pics"  v-if="pics.length>0 && swiperOptionHP!=undefined" class="hpLoop">
 	   	   <swiper-slide v-for="item in pics" :key="item.id"  slot="content">
 	    		<img :src="item.src" alt="" />
@@ -30,6 +32,7 @@
 </template>
 
 <script type="text/esmascript-6">
+    import MHeader from 'components/header/header'
 	import Loop from 'base/swiper/loop'
 	import Tabs from 'components/home/tab'
 	import Actives from 'components/home/active'
@@ -137,6 +140,7 @@
 			Actives,
 			TbPlay,//淘宝直播
 			GuessLikes,//猜你喜欢
+     		MHeader,
 		}
 	}
 </script>
