@@ -12,17 +12,7 @@ export function getScrollTop() {
 }
 
 
-//获取class数组
-export function getByClass(parent,classname){
-    var wchirld = parent.getElementsByTagName("*");
-    var chirldArr = [];
-    for(var i = 0; i<wchirld.length; i++){
-        if(wchirld[i].className==classname){
-            chirldArr.push(wchirld[i]);
-        }
-    }
-    return chirldArr;
-}
+
 //获得class
 export function getByClass(parent,className){
 	var boxArr = new Array(); //用来获取className的数组
