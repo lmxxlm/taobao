@@ -16,10 +16,10 @@ export default {
   }
 }
 </script>
-
 <style lang="less" scoped>
 @base:37.5;
 /*引入公共的css方法2*/
    /*@import 'common/less/common.css'  
    @import 'common/fonts/iconfont.css'*/
+ 
 le>

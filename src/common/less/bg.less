@@ -1,0 +1,19 @@
+//过度的背景颜色
+.bg_grad(@bg1,@bg2,@color){
+     background: -webkit-linear-gradient(left, @bg1, @bg2);
+    /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, @bg1, @bg2);
+    /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, @bg1, @bg2);
+    /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, @bg1, @bg2);
+    /* 标准的语法（必须放在最后） */
+    color: @color;
+}
+
+.bg_img(@url){
+    background: url(@url) no-repeat;
+    background-size:100% 100%;
+}
+
+

@@ -147,7 +147,7 @@
 
 <style scoped lang="less">
     @base:37.5;
-    
+   
     .home{
     	padding-top:53rem/@base;
     	padding-bottom:100rem/@base;

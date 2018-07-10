@@ -47,5 +47,53 @@
       "北京市昌平区回龙观西大街龙观置业大厦底商B座102单元1340",
       "营业时间:10:00-20:30"
     ]
+  },
+  "mine": {
+  	"header": {
+  		"headImg": "../../common/image/mine/head.png",
+  		"userName": "豆豆飞",
+  		"userId": "18368839220",
+  		"tabs": [
+  		    {"num":8,"name":"收藏夹","id":"collection_folder"},
+  		    {"num":5,"name":"关注店铺","id":"follow_store"},
+  		    {"num":4,"name":"足记","id":"fotoplace"},
+  		    {"num":60,"name":"红包卡券","id":"red_card"}
+  		]
+  	},
+  	"content":{
+  		"tqz":{
+  			 "loops":[
+  			     {"pTitle":"阿里圣诞节334和四大行","pInfo":"dsdhgs","imgUrl":"../../common/image/mine/loop.png","pId":"001"},
+  			     {"pTitle":"阿里圣诞节34和四大行","pInfo":"dhsg党风建设","imgUrl":"../../common/image/mine/loop.png","pId":"002"},
+  			     {"pTitle":"阿里圣诞rr节和四大行","pInfo":"dhsgd放松放松dhgs","imgUrl":"../../common/image/mine/loop.png","pId":"003"},
+  			     {"pTitle":"阿里圣诞节tt和四大行","pInfo":"的方式sdhgs","imgUrl":"../../common/image/mine/loop.png","pId":"004"}
+  			 ]
+  		},
+  		"myOrder":{
+  			"title":"我的订单",
+  			"info":"查看更多订单",
+  			"tabs":[
+  			    {"class":"icon-ziyuan","name":"待付款","id":"0001"},
+  			    {"class":"icon-daifahuo1","name":"待发货","id":"0002"},
+  			    {"class":"icon-daishouhuo1","name":"待收货","id":"0003"},
+  			    {"class":"icon-ziyuan","name":"待评价","id":"0004"},
+  			    {"class":"icon-ziyuan","name":"退款/售后","id":"0005"}
+  			]
+  		},
+  		"tools":{
+  			"title":"必备工具",
+  			"info":"查看全部工具",
+  			"tabs":[
+  			    {"class":"icon-huanfu","name":"主题换肤","id":"00001"},
+  			    {"class":"icon-lingquanzhongxin","name":"领券中心","id":"00002"},
+  			    {"class":"icon-money","name":"闲置换钱","id":"00003"},
+  			    {"class":"icon-xiaomicopy","name":"客服小蜜","id":"00004"},
+  			    {"class":"icon-huabei","name":"花呗","id":"00005"},
+  			    {"class":"icon-qia2","name":"阿里宝卡","id":"0006"},
+  			    {"class":"icon-daipingjia1","name":"我的评价","id":"00007"},
+  			    {"class":"icon-gengduo","name":"更多","id":"00008"}
+  			]
+  		}
+  	}
   }
 }
