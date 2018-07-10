@@ -19,8 +19,8 @@
 			</loop>
 		</div>
 		
-		<block :blockData="myOrder" :type="'type_myOrder'" v-if="myOrder"></block>
-		<block :blockData="tools" :type="'type_tools'" v-if="tools"></block>
+		<block :blockData="myOrder" :type="'type_myOrder'" v-if=" Object.keys(myOrder).length>0"></block>
+		<block :blockData="tools" :type="'type_tools'" v-if="Object.keys(tools).length>0"></block>
 	</div>
 </template>
 

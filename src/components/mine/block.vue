@@ -31,36 +31,37 @@
 			}
 		},
 		mounted(){
-			this.$nextTick(function(){
-			   //this.setWidth();
-			});
+			var that =this;
+			setTimeout(function(){
+				that.setWidth();
+			},2000)
 		},
 		watch:{
-			blockData:{
-				handler: function (val, oldVal) { 
-					console.log(val,oldVal)
-				    if(val==oldVal){
-				       this.$nextTick(function(){
-					     this.setWidth();
-				       });
-					}
-				},
-			      deep: true,
-			      immediate: true
-			}
+//			blockData:{
+//				handler: function (val, oldVal) { 
+//					if(val===oldVal){
+//						alert(123)
+//					  this.setWidth();
+//					}
+//				},
+//			      deep: true,
+//			      //immediate: true
+//			}
 			
 		},
 		methods:{
 			setWidth(){
-				this.$refs.boxs.style.width='100%';
-				for(var item of this.$refs.boxs.children){
-					if(this.type=='type_myOrder'){
-						item.style.width="20%";
-					}else if(this.type=='type_tools'){
-						
-						item.style.width='25%';
-					}	
+//				this.$refs.boxs.style.width='100%';
+				if($refs.boxs.children.length>1){
+					for(var item of this.$refs.boxs.children){
+						if(this.type=='type_myOrder'){
+							item.style.width="20%";
+						}else if(this.type=='type_tools'){
+							item.style.width='25%';
+						}	
+					}
 				}
+				
 			}
 		}
 	}
