@@ -4,7 +4,7 @@
 			<span class="name">{{blockData.title}}</span>
 			<span>{{blockData.info}}<i class="icon right"></i></span>
 		</div>
-		<div class="boxs flex_between">
+		<div class="boxs flex_between" ref="boxs">
 			<div class="box flex_column" v-for='item in blockData.tabs' :key="item.id">
 				<i class="icon iconfont" :class="item.class"></i>
 				<span>{{item.name}}</span>
@@ -19,6 +19,10 @@
 			blockData:{
 				type:Object,
 				default:{}
+			},
+			type:{
+				type:String,
+				default:''
 			}
 		},
 		data(){
@@ -27,7 +31,37 @@
 			}
 		},
 		mounted(){
-			console.log(this.blockData,"=========,,,,,");
+			this.$nextTick(function(){
+			   //this.setWidth();
+			});
+		},
+		watch:{
+			blockData:{
+				handler: function (val, oldVal) { 
+					console.log(val,oldVal)
+				    if(val==oldVal){
+				       this.$nextTick(function(){
+					     this.setWidth();
+				       });
+					}
+				},
+			      deep: true,
+			      immediate: true
+			}
+			
+		},
+		methods:{
+			setWidth(){
+				this.$refs.boxs.style.width='100%';
+				for(var item of this.$refs.boxs.children){
+					if(this.type=='type_myOrder'){
+						item.style.width="20%";
+					}else if(this.type=='type_tools'){
+						
+						item.style.width='25%';
+					}	
+				}
+			}
 		}
 	}
 </script>
@@ -46,6 +80,17 @@
    	   }
    	   .boxs{
    	   	 padding:10rem/@base;
+   	   	 padding-bottom:0;
+   	   	 flex-wrap:wrap;
+   	   	 box-sizing: border-box;
+   	   	 .box{
+   	   	 	margin-bottom:10rem/@base;
+   	   	 	i.icon{
+   	   	 		font-size:28rem/@base;
+   	   	 		line-height:28rem/@base;
+   	   	 	}
+   	   	 }
+   	   	 
    	   }
    }
 </style>
