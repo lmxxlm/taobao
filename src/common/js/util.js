@@ -24,3 +24,6 @@ export function getByClass(parent,className){
 	};
 	return boxArr;
 }
+
+//导出公共路径
+export const comUrl = 'http://localhost:8080/api/'

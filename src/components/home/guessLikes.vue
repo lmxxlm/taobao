@@ -82,6 +82,21 @@
 			
 			}
 		},
+		watch:{
+			likeDatas(val,oldVal){
+				for(var item of val.datas){
+					if(item.imgUrl){
+						var img = new Image();//创建一个img对象
+					    img.src='item.imgUrl'
+					    if(img.complete){
+					    	return item;
+					    }else{
+					    	
+					    }
+					}
+				}
+			}
+		},
 		mounted(){
 			this.$nextTick(function(){
 			  waterFlows('wrapLikes','block');

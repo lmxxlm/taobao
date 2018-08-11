@@ -1,6 +1,6 @@
 <template>
 	<div class="content">
-		
+
 		<div class="naughtyVal flex_between">
 			<div class="left">
 				<p>88会员</p>
@@ -18,7 +18,7 @@
 		        </swiper-slide>
 			</loop>
 		</div>
-		
+
 		<block :blockData="myOrder" :type="'type_myOrder'" v-if=" Object.keys(myOrder).length>0"></block>
 		<block :blockData="tools" :type="'type_tools'" v-if="Object.keys(tools).length>0"></block>
 	</div>
@@ -27,8 +27,9 @@
 <script>
 	import Loop from 'base/swiper/loop'
 	import Block from 'components/mine/block'
+	import { comUrl } from 'common/js/util' //正常的引入一个变量
 
-	
+
 	export default {
 		data(){
 			return {
@@ -53,14 +54,14 @@
 		methods:{
 			getTqz(){
 				var that=this;
-				var url = 'http://localhost:8080/api/mine';
+				var url = comUrl+'mine';
 				var data = '';
 		   	   	this.$http.get(url).then((response) => {
 		   	   		var result = JSON.parse(response.bodyText).data.content;
 					this.tqzData = result.tqz.loops;
 					this.myOrder = result.myOrder;
 				    this.tools = result.tools;
-				    
+
 					this.$nextTick(function(){
 						 that.setBgImg();//用setTimeout 200也可以获取到
 					})
@@ -73,19 +74,19 @@
 				for(var i in oImgs){
 //					oImgs[i].className=`bg_img(${oImgs[i].dataset.url})`;
                    console.log(oImgs[i].dataset.url,'==============')
-                   
+
 					//oImgs[i].style.cssText="backgroundImage:url('../../common/image/mine/head.png') no-repeat;background-size:100% 100%;";
 //	 				oImgs[i].style.backgroundImage="url('../../common/image/mine/head.png')";
 //	 				oImgs[i].style.backgroundRepeat="no-repeat";
 //	 				oImgs[i].style.backgroundSize='cover';
-	 				
+
 	 				//this.addBg=`{background:url(${oImgs[i].dataset.url}) no-repeat,background-size:100% 100%}`;
 	 				this.addImg=`{
 	 					backgroundImage:"url("+require('../../common/image/mine/loop.png')+")",
 						backgroundRepeat:'no-repeat',
 						backgroundSize:'100% 100%'
 	 				}`;
-	 				
+
 				}
 			}
 		},
@@ -128,10 +129,10 @@
 	 				width:60rem/@base;
 	 				height:36rem/@base;
 	 				border:1px solid #e3e3e3;
-	 				
+
 	 			}
 	 		}
 	 	}
 	 }
-	 
+
 </style>

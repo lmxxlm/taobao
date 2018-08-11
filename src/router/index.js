@@ -1,10 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/components/home/index'  
+import Home from '@/components/home/index'
 import WT from 'components/wt/wt'
 import Mes from 'components/mes/mes'
 import GoodsCar from 'components/goodsCar/goodsCar'
 import Mine from 'components/mine/mine'
+import SetPage from 'components/login/set'
 
 Vue.use(Router)
 
@@ -13,7 +14,7 @@ export default new Router({
     {
       path: '/',
       name:'home',
-      redirect: 'Home'  //这面的默认第一个进来的  
+      redirect: 'Home'  //这面的默认第一个进来的
     },
     {
       path: '/home',
@@ -34,7 +35,13 @@ export default new Router({
     },
     {
     	path: '/mine',
-    	component:Mine
+    	component:Mine,
+      children:[
+        {
+          path:'sets',
+          component:SetPage
+        }
+      ]
     }
   ]
 })

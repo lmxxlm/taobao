@@ -25,34 +25,24 @@
 				default:''
 			}
 		},
-		data(){
-			return {
-				mes:''
-			}
-		},
-		mounted(){
-			var that =this;
-			setTimeout(function(){
-				that.setWidth();
-			},2000)
-		},
 		watch:{
-//			blockData:{
-//				handler: function (val, oldVal) { 
-//					if(val===oldVal){
-//						alert(123)
-//					  this.setWidth();
-//					}
-//				},
-//			      deep: true,
-//			      //immediate: true
-//			}
-			
+			blockData:{//深入坚挺了数据   然后再调用设置宽度的方法，这样保证所有的值已经获取到
+				handler: function (val, oldVal) { 
+					 var that = this;
+				     if(val!=oldVal){
+				     	that.$nextTick(function(){
+				     		that.setWidth();
+				     	})
+				     }
+				},
+			      deep: true,
+			      immediate: true
+			}
 		},
 		methods:{
 			setWidth(){
-//				this.$refs.boxs.style.width='100%';
-				if($refs.boxs.children.length>1){
+				this.$refs.boxs.style.width='100%';
+				if(this.$refs.boxs.children.length>1){
 					for(var item of this.$refs.boxs.children){
 						if(this.type=='type_myOrder'){
 							item.style.width="20%";

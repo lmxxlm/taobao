@@ -10,7 +10,7 @@
 				    <i class="icon iconfont icon-you1"></i>
 				</p>
 			</div>
-			<span class="set right">设置</span>
+			<span class="set right" @click="set">设置</span>
 		</div>
 		<div class="tabs flex_between">
 			<div class="box flex_column" v-for="item in headDatas.tabs" :key="item.id">
@@ -22,6 +22,7 @@
 </template>
 
 <script>
+	import { comUrl } from 'common/js/util' //正常的引入一个变量
 	export default {
 		data(){
 			return{
@@ -33,12 +34,15 @@
 		},
 		methods:{
 			 getHeadData(){
-		   	   	  this.$http.get('http://localhost:8080/api/mine',{ credentials: true }).then((response) => {
+		   	   	this.$http.get(comUrl+'mine',{ credentials: true }).then((response) => {
 					  this.headDatas=JSON.parse(response.bodyText).data.header;
 					  console.log(this.headDatas.headImg);
 					  this.headDatas.headImg = require('../../common/image/mine/head.png');
 				  })
-	   	     }
+	   	 },
+			 set(){//去设置页面
+				 this.$router.push({path:'/mine/sets'})
+			 }
 		}
 	}
 </script>
@@ -70,7 +74,7 @@
    	  			margin-top:5rem/@base;
    	  			background:rgba(0,0,0,0.2);
    	  			display:inline-block;
-   	  			padding:2rem/@base 5rem/@base; 
+   	  			padding:2rem/@base 5rem/@base;
    	  			border-radius: 15rem/@base;
                 span{ font-size:12rem/@base;}
    	  			i{display:inline-block;font-size:14rem/@base;}
@@ -83,7 +87,7 @@
    	  		font-size:14rem/@base;
    	  	}
    	  }
-   	  
+
    	  .tabs{
    	  	padding:0 30rem/@base;
    	  	.box{
