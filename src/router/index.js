@@ -6,6 +6,7 @@ import Mes from 'components/mes/mes'
 import GoodsCar from 'components/goodsCar/goodsCar'
 import Mine from 'components/mine/mine'
 import SetPage from 'components/login/set'
+import Login from 'components/login/login'
 
 Vue.use(Router)
 
@@ -36,12 +37,15 @@ export default new Router({
     {
     	path: '/mine',
     	component:Mine,
-      children:[
-        {
-          path:'sets',
-          component:SetPage
-        }
-      ]
-    }
+
+    },
+    {
+      path: '/sets',
+      component:SetPage
+    },
+    {
+      path: '/login',
+      component:Login
+    },
   ]
 })

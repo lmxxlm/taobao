@@ -5,13 +5,15 @@
 		<div class="wrap">
 			<div class="block"></div>
 		</div>
+		<m-footer></m-footer>
 	</div>
 </template>
 
 <script type="text/esmascript-6">
   import MineHead from 'components/mine/head'	 //头部
   import MineContent from 'components/mine/content'	//内容部分
-	
+	import MFooter from 'components/footer/footer'
+
   export default {
   	data(){
   		return {
@@ -20,7 +22,8 @@
   	},
    components:{
    	   MineHead,
-   	   MineContent
+   	   MineContent,
+			 MFooter
    }
   }
 </script>

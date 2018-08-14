@@ -1,12 +1,12 @@
 <template>
 	<div class="home">
       <m-header ></m-header>
-		
+
 	   <loop :setOptions="swiperOptionHP" :hpLoops="pics"  v-if="pics.length>0 && swiperOptionHP!=undefined" class="hpLoop">
 	   	   <swiper-slide v-for="item in pics" :key="item.id"  slot="content">
 	    		<img :src="item.src" alt="" />
 	       </swiper-slide>
-	       
+
 	   </loop>
 	   <!--中间tab模块-->
 	   <tabs></tabs>
@@ -28,17 +28,19 @@
        <tb-play :playDatas="tbPlayDatas" v-if="tbPlayDatas"></tb-play>
        <!--猜你喜欢-->
        <guess-likes></guess-likes>
+			 <m-footer></m-footer>
 	</div>
 </template>
 
 <script type="text/esmascript-6">
-    import MHeader from 'components/header/header'
+  import MHeader from 'components/header/header'
+	import MFooter from 'components/footer/footer'
 	import Loop from 'base/swiper/loop'
 	import Tabs from 'components/home/tab'
 	import Actives from 'components/home/active'
 	import TbPlay from 'components/home/tbPlay'
 	import GuessLikes from 'components/home/guessLikes'
-	
+
 	import {setBgImg} from 'common/js/setBgImg'
 
 	export default{
@@ -115,7 +117,7 @@
 			    	   	id:'005',
 			    	   }
 			    	],
-			    	
+
 			    }
 			}
 		},
@@ -140,14 +142,15 @@
 			Actives,
 			TbPlay,//淘宝直播
 			GuessLikes,//猜你喜欢
-     		MHeader,
+     	MHeader,
+			MFooter
 		}
 	}
 </script>
 
 <style scoped lang="less">
     @base:37.5;
-   
+
     .home{
     	padding-top:53rem/@base;
     	padding-bottom:100rem/@base;
@@ -162,7 +165,7 @@
 	    		bottom:0;
 	    		background:red;
 	    		left:50%;
-	    		
+
 	    	}
 	    }
 	    /*竖屏轮播*/

@@ -41,7 +41,7 @@
 				  })
 	   	 },
 			 set(){//去设置页面
-				 this.$router.push({path:'/mine/sets'})
+				 this.$router.push({path:'/sets'})
 			 }
 		}
 	}
@@ -50,6 +50,7 @@
 <style scoped lang="less">
    @import '../../common/less/bg.less';/*绝对不能少了；*/
    @base:37.5;
+	 #app .footer{display:none;}
    .head{
    	  .bg_grad(#FF8800,#FF5300,#fff);
    	  padding-bottom:40rem/@base;
