@@ -10,42 +10,46 @@ import Login from 'components/login/login'
 
 Vue.use(Router)
 
-export default new Router({
-  routes: [
-    {
-      path: '/',
-      name:'home',
-      redirect: 'Home'  //这面的默认第一个进来的
-    },
-    {
-      path: '/home',
-      component:Home //即使重定向了下面也要再写一个
-    },
-    {
-    	path: '/wt',
-    	name:'wt',
-    	component:WT
-    },
-    {
-    	path: '/mes',
-    	component:Mes
-    },
-    {
-    	path: '/goodsCar',
-    	component:GoodsCar
-    },
-    {
-    	path: '/mine',
-    	component:Mine,
+export const constantRouterMap = [
+  {
+    path: '/',
+    name:'home',
+    redirect: 'Home'  //这面的默认第一个进来的
+  },
+  {
+    path: '/home',
+    component:Home //即使重定向了下面也要再写一个
+  },
+  {
+    path: '/wt',
+    name:'wt',
+    component:WT
+  },
+  {
+    path: '/mes',
+    component:Mes
+  },
+  {
+    path: '/goodsCar',
+    component:GoodsCar
+  },
+  {
+    path: '/mine',
+    component:Mine,
 
-    },
-    {
-      path: '/sets',
-      component:SetPage
-    },
-    {
-      path: '/login',
-      component:Login
-    },
-  ]
+  },
+  {
+    path: '/sets',
+    component:SetPage
+  },
+  {
+    path: '/login',
+    component:Login
+  },
+]
+
+export default new Router({
+   routes: constantRouterMap
 })
+
+export const asyncRouterMap = []

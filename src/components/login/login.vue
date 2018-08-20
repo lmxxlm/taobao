@@ -11,7 +11,7 @@
             <p>李***号</p>
             <div class="input flex_between">
               <i class="icon iconfont " @click="seePass" :class="setEye==true?'icon-eye':'icon-biyan3'"></i>
-              <input :type="setEye==true?'text':'password'" name="" value="" placeholder="请输入密码">
+              <input :type="setEye==true?'text':'password'" name="" value="" placeholder="请输入密码" v-model="loginForm.password">
               <span>忘记密码</span>
             </div>
             <button type="button" name="button" @click="loginBtn" class="loginBtn grad2">登录</button>
@@ -68,6 +68,10 @@
   export default {
     data(){
       return {
+        loginForm: {
+          username: 'admin',
+          password: '1111111'
+        },
         mes:'',
         pass:'',
         modelChange:false,
@@ -80,6 +84,15 @@
           this.setEye=!this.setEye
         },
         loginBtn(){
+            alert('去登录')
+            this.$store.dispatch('LoginByUsername', this.loginForm).then(() => {
+              alert(111)
+              // this.loading = false
+              this.$router.push({ path: '/login' })
+            }).catch(() => {
+              this.loading = false
+            })
+            return false;
             this.$router.push({path:'/home'})
         },
         cancel(){

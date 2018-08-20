@@ -3,14 +3,17 @@
 import Vue from 'vue'
 import 'lib-flexible'
 import router from './router'
+import store from './store'
 import VueResource from 'vue-resource'
 import fastclick from 'fastclick'
 import App from './App'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'common/less/common.css' //引入公共的css  方法1
-//import 'common/less/flexible.css'
 import 'common/fonts/iconfont.css'
 import 'swiper/dist/css/swiper.css'
+
+// import './permission' // permission control
+// import './mock' // simulation data
 
 
 Vue.use(VueAwesomeSwiper)
@@ -24,6 +27,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
